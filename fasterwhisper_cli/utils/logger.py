@@ -7,6 +7,6 @@ def configure_logger():
     Returns:
         logger: logger used to display messages by console
     """
-    logging.basicConfig()
-    logger = logging.getLogger("fasterwhisper_cli").setLevel(logging.INFO)
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger("fasterwhisper-cli")
     return logger

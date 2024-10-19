@@ -16,10 +16,8 @@ def transcribe_audio(file_path: str, model_size: str = "tiny") -> str:
         string: The transciption of the file 
     """
 
-    # TODO initalize WhisperModel as shown on fasterwhisper instructions. Use the adequate arguments.
-    model = WhisperModel(model_size, device="cuda", compute_type="float16")
+    model = WhisperModel(model_size, device="cpu", compute_type="int8")
 
-    # TODO perform the transcription 
-    transcription = model.transcribe(file_path, beam_size=5)
+    transcription, _ = model.transcribe(file_path, beam_size=5)
     
     return transcription

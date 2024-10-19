@@ -3,10 +3,8 @@ from setuptools import setup, find_packages
 # Read the contents of requirements.txt
 
 def read_requirements_file():
-    # opens requirements.txt and returns a List 
-    # of str with the content of each line.
-    # It is called on the install_requires argument of setup()
-    pass
+    with open('requirements.txt') as f:
+        return f.read().splitlines()
 
 
 setup(
